@@ -17,10 +17,11 @@ if [ -z $* ]; then
     GTEST_COLOR=1 ctest --test-dir build/test --output-on-failure -j12
 elif [ $1 == "build" ]; then
     echo "Build"
-    cmake -S . -B build -DTARGET="src"
+    cmake -S . -B build -DTARGET="src" -DBUILD_TESTING=OFF
+    cmake --build build -j 12
 elif [ $1 = "rebuild" ]; then
     rm -r build/*
     cmake -S . -B build/
 elif [ $1 = "clean" ]; then
-    cmake --build build -j 12 --target clean
+    rm -r build/*
 fi
