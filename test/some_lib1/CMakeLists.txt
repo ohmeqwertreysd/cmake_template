@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
+
+get_filename_component()
+
 project(some_lib1_test)
 
 file(GLOB SOURCES *.cpp)

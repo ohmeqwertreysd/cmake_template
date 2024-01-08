@@ -11,3 +11,4 @@ MACRO(add_all_subdirectory CURRENT_DIR)
         add_subdirectory(${subdir})
     ENDFOREACH()
 ENDMACRO()
+
